@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualBasic;
 using System;
 using System.Drawing;
+using System.Linq.Expressions;
 using System.Runtime.CompilerServices;
 
 namespace Learning_Exercises
@@ -48,11 +49,11 @@ namespace Learning_Exercises
                             break;
 
                         case "6":
-
+                            Exercise6();
 
                             break;
 
-                        case "25":
+                        case "e":
                             appRun = false;
 
                             break;
@@ -126,7 +127,16 @@ namespace Learning_Exercises
 
             static void Exercise5()
             {
-                
+                int[] array = { 1, 2, 3, 4, 5, };
+
+                foreach (var item in array)
+                {
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.WriteLine($"\t{item}");
+                }
+
+
+
             }
 
             static void Exercise6()
@@ -137,16 +147,39 @@ namespace Learning_Exercises
             static void ExerciseMenu()
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("\tExercise 1");
-                Console.WriteLine("\tExercise 2");
-                Console.WriteLine("\tExercise 3");
-                Console.WriteLine("\tExercise 4");
+                Console.Write("\tExercise 1");
+                Console.Write("\tExercise 2");
+                Console.Write("\tExercise 3");
+                Console.Write("\tExercise 4");
                 Console.WriteLine("\tExercise 5");
-                Console.WriteLine("\tExercise 6");
-                Console.WriteLine("\tExercise 7");
-                Console.WriteLine("\tExercise 8");
-                Console.WriteLine("\tExercise 9");
+                Console.Write("\tExercise 6");
+                Console.Write("\tExercise 7");
+                Console.Write("\tExercise 8");
+                Console.Write("\tExercise 9");
                 Console.WriteLine("\tExercise 10");
+                Console.Write("\tExercise 11");
+                Console.Write("\tExercise 12");
+                Console.Write("\tExercise 13");
+                Console.Write("\tExercise 14");
+                Console.WriteLine("\tExercise 15");
+                Console.Write("\tExercise 16");
+                Console.Write("\tExercise 17");
+                Console.Write("\tExercise 18");
+                Console.Write("\tExercise 19");
+                Console.WriteLine("\tExercise 20");
+                Console.Write("\tExercise 21");
+                Console.Write("\tExercise 22");
+                Console.Write("\tExercise 23");
+                Console.Write("\tExercise 24");
+                Console.WriteLine("\tExercise 25");
+                Console.Write("\tExercise 26");
+                Console.Write("\tExercise 27");
+                Console.Write("\tExercise 28");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Console.Write("\tPress E to Exit!");
+                Console.WriteLine("");
             }
         }
     }
