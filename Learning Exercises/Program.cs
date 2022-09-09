@@ -127,20 +127,29 @@ namespace Learning_Exercises
 
             static void Exercise5()
             {
-                int[] array = { 1, 2, 3, 4, 5, };
 
-                foreach (var item in array)
+
+                int[] array = new int[5] { 1, 2, 3, 4, 5 };
+                array[0] = (3);
+
+
+                Console.WriteLine("");
+
+                for (int i = 0; i < array.Length; i++)
                 {
-                    Console.ForegroundColor = ConsoleColor.Blue;
-                    Console.WriteLine($"\t{item}");
+                    Console.Write($"\t{array[i]}");
                 }
-
-
 
             }
 
             static void Exercise6()
             {
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.Write("\tEnter your first number: ");
+                double firstNumber = Convert.ToInt32(Console.ReadLine());
+
+                Console.Write("\tEnter your second number: ");
+                double secondNumber = Convert.ToInt32(Console.ReadLine());
 
             }
 
@@ -184,3 +193,35 @@ namespace Learning_Exercises
         }
     }
 }
+
+
+// Practising With Random Code // ----------------------------- // ---------------------//
+
+//Console.WriteLine("");
+
+//for (var i = 0; i < arr.Length; i++)
+//{
+//    Console.Write($"\t{arr[i]}");
+//}
+
+////Test int array
+//int[] arr = new int[4] { 10, 20, 30, 40 };
+
+////Test string array
+//string[] ar = new string[4] { "a", "b", "c", "d" };
+//for (int i = 0; i < ar.Length; i++)
+//{
+//    Console.Write($"\t{ar[i]}");
+
+//}
+
+// target element inside array = BMW
+//string[] cars = { "Volvo", "BMW", "Ford", "Mazda" };
+//Console.WriteLine(cars[1]);
+
+
+//foreach (var item in array)
+//{
+//    Console.ForegroundColor = ConsoleColor.Blue;
+//    Console.WriteLine($"\t{item}");
+//}
