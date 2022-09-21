@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualBasic;
 using System;
+using System.Data;
 using System.Drawing;
 using System.Linq.Expressions;
 using System.Runtime.CompilerServices;
@@ -50,6 +51,41 @@ namespace Learning_Exercises
 
                         case "6":
                             Exercise6();
+
+                            break;
+
+                        case "7":
+                            Exercise7();
+
+                            break;
+
+                        case "8":
+                            Exercise8();
+
+                            break;
+
+                        case "9":
+                            Exercise9();
+
+                            break;
+
+                        case "10":
+                            Exercise10();
+
+                            break;
+
+                        case "11":
+                            Exercise11();
+
+                            break;
+
+                        case "12":
+                            Exercise12();
+
+                            break;
+
+                        case "13":
+                            Exercise13();
 
                             break;
 
@@ -127,18 +163,18 @@ namespace Learning_Exercises
 
             static void Exercise5()
             {
+                string str = "Arrays are very common in programming, they look something like: [1,2,3,4,5]";
+                Console.ForegroundColor = ConsoleColor.Blue;
+
+                string newString = str.Substring(str.IndexOf("["));
+
+                newString = newString.Remove(newString.IndexOf("2"), 4);
+
+                newString = newString.Insert(newString.IndexOf("]"), ",6,7,8,9,10");
 
 
-                int[] array = new int[5] { 1, 2, 3, 4, 5 };
-                array[0] = (3);
+                Console.WriteLine($"\t{newString}");
 
-
-                Console.WriteLine("");
-
-                for (int i = 0; i < array.Length; i++)
-                {
-                    Console.Write($"\t{array[i]}");
-                }
 
             }
 
@@ -151,77 +187,219 @@ namespace Learning_Exercises
                 Console.Write("\tEnter your second number: ");
                 double secondNumber = Convert.ToInt32(Console.ReadLine());
 
+
+                while (secondNumber == 0)
+
+                {
+                    Console.WriteLine("Please enter a number that is not 0:");
+                    secondNumber = Convert.ToInt32(Console.ReadLine());
+                }
+
+                {
+                    Console.WriteLine("");
+                }
+
+                switch (firstNumber.CompareTo(secondNumber))
+                {
+                    case 1:
+                        Console.WriteLine("{0} is greater than {1}", firstNumber, secondNumber);
+                        break;
+
+                    case 2:
+                        Console.WriteLine("{0} is equal than {1}", firstNumber, secondNumber);
+                        break;
+
+                    case 3:
+                        Console.WriteLine("{0} is greater than {1}", secondNumber, firstNumber);
+                        break;
+                }
+
+
+                Console.WriteLine("\t" + firstNumber + " + " + secondNumber + " = " + (firstNumber + secondNumber));
+                Console.WriteLine("\t" + firstNumber + " - " + secondNumber + " = " + (firstNumber - secondNumber));
+                Console.WriteLine("\t" + firstNumber + " * " + secondNumber + " = " + (firstNumber * secondNumber));
+                Console.WriteLine("\t" + firstNumber + " / " + secondNumber + " = " + (firstNumber / secondNumber));
             }
 
-            static void ExerciseMenu()
+            static void Exercise7()
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.Write("\tExercise 1");
-                Console.Write("\tExercise 2");
-                Console.Write("\tExercise 3");
-                Console.Write("\tExercise 4");
-                Console.WriteLine("\tExercise 5");
-                Console.Write("\tExercise 6");
-                Console.Write("\tExercise 7");
-                Console.Write("\tExercise 8");
-                Console.Write("\tExercise 9");
-                Console.WriteLine("\tExercise 10");
-                Console.Write("\tExercise 11");
-                Console.Write("\tExercise 12");
-                Console.Write("\tExercise 13");
-                Console.Write("\tExercise 14");
-                Console.WriteLine("\tExercise 15");
-                Console.Write("\tExercise 16");
-                Console.Write("\tExercise 17");
-                Console.Write("\tExercise 18");
-                Console.Write("\tExercise 19");
-                Console.WriteLine("\tExercise 20");
-                Console.Write("\tExercise 21");
-                Console.Write("\tExercise 22");
-                Console.Write("\tExercise 23");
-                Console.Write("\tExercise 24");
-                Console.WriteLine("\tExercise 25");
-                Console.Write("\tExercise 26");
-                Console.Write("\tExercise 27");
-                Console.Write("\tExercise 28");
-                Console.WriteLine("");
-                Console.WriteLine("");
-                Console.ForegroundColor = ConsoleColor.DarkGreen;
-                Console.Write("\tPress E to Exit!");
-                Console.WriteLine("");
+
             }
+
+            static void Exercise8()
+            {
+
+            }
+
+            static void Exercise9()
+            {
+
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.Write("\tWhat is your name? : "); // ask name
+                string? userInput = Console.ReadLine();  // stores user input in variable
+                Console.Write($"\tHello: {userInput}, What is your birth year: "); // prints your name and ask for birth
+                string? birthYear = (Console.ReadLine()); // store your birthyear in birthyear variable
+
+
+                int age = int.Parse(birthYear); // parse string into an int and store in age variable
+
+                age = DateTime.Now.Year - age;
+
+                if (age >= 18)
+                {
+                    Console.WriteLine("\tDo you want to order a beer?");
+                    Console.WriteLine("\tY/N");
+                    string? order = Console.ReadLine();
+
+                    if (order == "y" || order == "Y")
+                    {
+                        Console.WriteLine("\tA cold corona it is!");
+                    }
+                    else if (order == "n" || order == "N")
+                    {
+                        Console.WriteLine("\tDo you want a coke instead?");
+                        Console.WriteLine("\tY/N");
+                        string? answer = Console.ReadLine();
+
+                        if (answer == "y" || answer == "Y")
+                        {
+                            Console.WriteLine("\tA cold coke it is!");
+                        }
+                        else
+                        {
+                            Console.WriteLine("\tNo order options are available!");
+                        }
+                    }
+                }
+                else if (age < 18)
+                {
+                    Console.WriteLine("\t Do you want to order a coke?");
+                    Console.WriteLine("\tY/N");
+                    string? answer = Console.ReadLine();
+
+                    if (answer == "y" || answer == "Y")
+                    {
+                        Console.WriteLine("\tA cold coke it is!");
+                    }
+                    else if (answer == "n" || answer == "N")
+                    {
+                        Console.WriteLine("\tNo order options are available!");
+                    }
+                }
+            }
+        }
+
+        static void Exercise10()
+        {
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("\tChoose beetween 1, 2 or 3!");
+            int pick = Convert.ToInt32(Console.ReadLine());
+
+            switch (pick)
+            {
+
+                case 1:
+                    method1();
+                    break;
+
+                case 2:
+                    Console.Write("\t Error!");
+                    break;
+
+                case 3:
+                    Console.WriteLine(Console.ForegroundColor.ToString());  //Test foreground color before change
+
+                    if (Console.ForegroundColor == ConsoleColor.Green)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                    }
+                    else { Console.ForegroundColor = ConsoleColor.Green; }
+
+                    Console.WriteLine(Console.ForegroundColor.ToString());  //Test foreground color after change
+                    break;
+            }
+
+            static void method1()
+            {
+                Console.Write("\tPick your first number: ");
+                int a = Convert.ToInt32(Console.ReadLine());
+                Console.Write("\tPick your second number: ");
+                int b = Convert.ToInt32(Console.ReadLine());
+
+                if (b == 0)
+                {
+                    Console.WriteLine("\tCannot divide with 0");
+                }
+                else if (b != 0)
+                {
+                    Console.WriteLine("\tThe sum is: " + a / b);
+                }
+            }
+        }
+
+        static void Exercise11()
+        {
+
+        }
+
+        static void Exercise12()
+        {
+            Console.ForegroundColor = ConsoleColor.Blue;
+            for (int i = 1; i < 10; i++)
+            {
+
+                for (int j = 1; j < 10; j++)
+                {
+
+                    Console.Write($"{i * j + "\t"}");
+                }
+                Console.WriteLine();
+            }
+        }
+
+        static void Exercise13()
+        {
+
+        }
+
+
+
+        static void ExerciseMenu()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write("\tExercise 1");
+            Console.Write("\tExercise 2");
+            Console.Write("\tExercise 3");
+            Console.Write("\tExercise 4");
+            Console.WriteLine("\tExercise 5");
+            Console.Write("\tExercise 6");
+            Console.Write("\tExercise 7");
+            Console.Write("\tExercise 8");
+            Console.Write("\tExercise 9");
+            Console.WriteLine("\tExercise 10");
+            Console.Write("\tExercise 11");
+            Console.Write("\tExercise 12");
+            Console.Write("\tExercise 13");
+            Console.Write("\tExercise 14");
+            Console.WriteLine("\tExercise 15");
+            Console.Write("\tExercise 16");
+            Console.Write("\tExercise 17");
+            Console.Write("\tExercise 18");
+            Console.Write("\tExercise 19");
+            Console.WriteLine("\tExercise 20");
+            Console.Write("\tExercise 21");
+            Console.Write("\tExercise 22");
+            Console.Write("\tExercise 23");
+            Console.Write("\tExercise 24");
+            Console.WriteLine("\tExercise 25");
+            Console.Write("\tExercise 26");
+            Console.Write("\tExercise 27");
+            Console.Write("\tExercise 28");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.Write("\tPress E to Exit!");
+            Console.WriteLine("");
         }
     }
 }
-
-
-// Practising With Random Code // ----------------------------- // ---------------------//
-
-//Console.WriteLine("");
-
-//for (var i = 0; i < arr.Length; i++)
-//{
-//    Console.Write($"\t{arr[i]}");
-//}
-
-////Test int array
-//int[] arr = new int[4] { 10, 20, 30, 40 };
-
-////Test string array
-//string[] ar = new string[4] { "a", "b", "c", "d" };
-//for (int i = 0; i < ar.Length; i++)
-//{
-//    Console.Write($"\t{ar[i]}");
-
-//}
-
-// target element inside array = BMW
-//string[] cars = { "Volvo", "BMW", "Ford", "Mazda" };
-//Console.WriteLine(cars[1]);
-
-
-//foreach (var item in array)
-//{
-//    Console.ForegroundColor = ConsoleColor.Blue;
-//    Console.WriteLine($"\t{item}");
-//}
