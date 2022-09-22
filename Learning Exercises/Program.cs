@@ -89,6 +89,41 @@ namespace Learning_Exercises
 
                             break;
 
+                        case "14":
+                            Exercise14();
+
+                            break;
+
+                        case "15":
+                            Exercise15();
+
+                            break;
+
+                        case "16":
+                            Exercise16();
+
+                            break;
+
+                        case "17":
+                            Exercise17();
+
+                            break;
+
+                        case "18":
+                            Exercise18();
+
+                            break;
+
+                        case "19":
+                            Exercise19();
+
+                            break;
+
+                        case "20":
+                            Exercise20();
+
+                            break;
+
                         case "e":
                             appRun = false;
 
@@ -254,6 +289,7 @@ namespace Learning_Exercises
                     if (order == "y" || order == "Y")
                     {
                         Console.WriteLine("\tA cold corona it is!");
+                        return;
                     }
                     else if (order == "n" || order == "N")
                     {
@@ -264,6 +300,7 @@ namespace Learning_Exercises
                         if (answer == "y" || answer == "Y")
                         {
                             Console.WriteLine("\tA cold coke it is!");
+                            return;
                         }
                         else
                         {
@@ -339,7 +376,43 @@ namespace Learning_Exercises
 
         static void Exercise11()
         {
+            Console.Write("Enter a number: ");
+            int number;
+            number = Convert.ToInt32(Console.ReadLine());
 
+
+            while (number < 0)
+            {
+                Console.WriteLine("error");
+            }
+
+            for (int i = 0; i <= number; i++)
+            {
+
+                Division(i);
+            }
+
+            Console.WriteLine("---------------");
+
+            for (int i = number; i >= 0; i--)
+            {
+                Division(i);
+            }
+
+        }
+
+        private static void Division(int a)
+        {
+            if (a % 2 == 0)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+            }
+            Console.WriteLine(a);
         }
 
         static void Exercise12()
@@ -358,6 +431,58 @@ namespace Learning_Exercises
         }
 
         static void Exercise13()
+        {
+
+        }
+
+        static void Exercise14()
+        {
+
+        }
+
+        static void Exercise15()
+        {
+
+        }
+
+        static void Exercise16()
+        {
+            int number;
+            int a = 0;
+            int b = 1;
+
+            Console.Write("\tEnter a Number: ");
+            number = Convert.ToInt32(Console.ReadLine());
+
+            for (int i = 0; i < number; i++)
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write(a + " ");
+
+                int temp = a;
+                a = b;
+                b = temp + a;
+            }
+
+        
+        }
+
+        static void Exercise17()
+        {
+
+        }
+
+        static void Exercise18()
+        {
+
+        }
+
+        static void Exercise19()
+        {
+
+        }
+
+        static void Exercise20()
         {
 
         }
